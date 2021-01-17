@@ -1,0 +1,10 @@
+mat-toolbar {
+  position: relative;
+}
+
+mat-toolbar mat-spinner {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  left: 5px;
+}

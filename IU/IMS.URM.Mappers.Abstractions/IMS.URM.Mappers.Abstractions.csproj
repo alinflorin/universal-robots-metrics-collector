@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.URM.Dto\IMS.URM.Dto.csproj" />
+    <ProjectReference Include="..\IMS.URM.Entities\IMS.URM.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

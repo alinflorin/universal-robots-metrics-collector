@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  gateway:
+    ports:
+    - "80:80"
+    - "443:443"
+    volumes:
+    - type: volume
+      source: ssl-volume
+      target: /root/.caddy
+    - type: bind
+      source: ./docker-compose-caddyfile.Production
+      target: /etc/Caddyfile
+  imsurm:
+    ports:
+    - "5002:5002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:5000
+      - RUN_IN_CONTAINER=true
+  mongo:
+    restart: unless-stopped
+    image: mongo
+    volumes:
+    - /media/hdd/mongodb_data:/data/db

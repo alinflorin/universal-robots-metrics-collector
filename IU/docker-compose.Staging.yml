@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  gateway:
+    ports:
+    - "2080:80"
+    - "2443:443"
+    volumes:
+    - type: volume
+      source: ssl-volume
+      target: /root/.caddy
+    - type: bind
+      source: ./docker-compose-caddyfile.Staging
+      target: /etc/Caddyfile
+  imsurm:
+    ports:
+    - "5002:5002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Staging
+      - ASPNETCORE_URLS=http://+:5000
+      - RUN_IN_CONTAINER=true
+  mongo:
+    volumes:
+    - /home/qoffice/mongodb_data:/data/db

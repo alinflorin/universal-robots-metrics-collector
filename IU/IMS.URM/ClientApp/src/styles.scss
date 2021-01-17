@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+html, body {
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#wrapper {
+  padding: 1em;
+  overflow: auto;
+}
+
+snack-bar-container.error-toast {
+  background: red;
+}
+snack-bar-container.info-toast {
+  background: #1098CA;
+}
+snack-bar-container.warn-toast {
+  background: orange;
+}

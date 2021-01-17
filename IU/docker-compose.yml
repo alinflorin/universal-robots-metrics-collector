@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  gateway:
+    image: abiosoft/caddy
+    restart: unless-stopped
+    environment:
+      - ACME_AGREE=true
+    depends_on:
+    - imsurm
+    ports:
+    - "2080:80"
+    - "2443:443"
+    volumes:
+    - type: volume
+      source: ssl-volume
+      target: /root/.caddy
+    - type: bind
+      source: ./docker-compose-caddyfile
+      target: /etc/Caddyfile
+  imsurm:
+    restart: unless-stopped
+    image: intermecaserv/intermecaserv:imsurm
+    ports:
+    - "5002:5002"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5000
+      - RUN_IN_CONTAINER=true
+    depends_on:
+    - mongo
+  mongo:
+    restart: unless-stopped
+    image: mongo
+    volumes:
+    - ./mongodb_data:/data/db
+volumes:
+  ssl-volume:

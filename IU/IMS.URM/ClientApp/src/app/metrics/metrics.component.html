@@ -1,0 +1,18 @@
+<h3>{{ip ? (robotName ? robotName : ip) : 'Toti robotii'}}</h3>
+<p *ngIf="metrics == null || metrics.length === 0">Nu exista date</p>
+<div *ngIf="metrics != null && metrics.length > 0">
+  <mat-card *ngFor="let metric of metrics" [routerLink]="'/metric-details/' + metric.metricName + '/' + (ip ? ip : '')" [queryParams]="{robotName: robotName}">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>info</mat-icon>
+        <mat-card-title>{{metric.title}}</mat-card-title>
+        <mat-card-subtitle>{{metric.description}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <b>{{metric.value}}</b>
+    </mat-card-content>
+
+    <mat-card-footer>
+    </mat-card-footer>
+  </mat-card>
+</div>

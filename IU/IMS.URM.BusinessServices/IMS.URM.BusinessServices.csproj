@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Akka" Version="1.3.14" />
+    <PackageReference Include="Akka.DI.Extensions.DependencyInjection" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IMS.URM.BusinessServices.Abstractions\IMS.URM.BusinessServices.Abstractions.csproj" />
+    <ProjectReference Include="..\IMS.URM.Mappers.Abstractions\IMS.URM.Mappers.Abstractions.csproj" />
+    <ProjectReference Include="..\IMS.URM.Persistence.Abstractions\IMS.URM.Persistence.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

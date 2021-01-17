@@ -1,0 +1,11 @@
+<mat-list>
+  <h3 mat-subheader>Lista roboti</h3>
+  <mat-list-item routerLink="/metrics">
+      <mat-icon mat-list-icon>memory</mat-icon>
+      Toti
+    </mat-list-item>
+  <mat-list-item *ngFor="let robot of allRobots" [routerLink]="'/metrics/' + robot.ip" [queryParams]="{robotName: robot.hostname}">
+    <mat-icon mat-list-icon>memory</mat-icon>
+    {{robot.hostname ? robot.hostname : robot.ip}}
+  </mat-list-item>
+</mat-list>

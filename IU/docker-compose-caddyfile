@@ -1,0 +1,4 @@
+* {
+    proxy / imsurm_imsurm_1:5000
+	tls self_signed
+}

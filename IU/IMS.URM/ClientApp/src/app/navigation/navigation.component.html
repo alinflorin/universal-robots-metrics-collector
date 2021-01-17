@@ -1,0 +1,4 @@
+<mat-toolbar fxLayout="row" fxLayoutAlign="center center">
+  <mat-spinner *ngIf="loaderService.isVisible | async" color="accent" mode="indeterminate" [diameter]="32"></mat-spinner>
+  <img routerLink="/robots-list" src="assets/ims_logo.png" />
+</mat-toolbar>

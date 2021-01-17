@@ -1,0 +1,4 @@
+www.urm.intermecaserv.com urm.intermecaserv.com {
+    proxy / imsurm_imsurm_1:5000
+	tls contact@intermecaserv.com
+}
